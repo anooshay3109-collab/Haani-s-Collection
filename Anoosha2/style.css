@@ -1,0 +1,1623 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFDF5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar */
+
+.navbar {
+    width: 100%;
+    min-height: 100px;
+    background-color: #FFFDF5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 5%;
+    border-bottom: 1px solid #E8DCCB;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #4A3428;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #D4AF75;
+    margin-top: 2px;
+}
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4A3428;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: #D4AF75;
+    bottom: -7px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #B58B4F;
+}
+
+.nav-links .sale {
+    color: #B58B4F;
+    font-weight: 600;
+}
+
+/* Icons */
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-icons a {
+    color: #4A3428;
+    font-size: 17px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-icons a:hover {
+    color: #D4AF75;
+    transform: translateY(-2px);
+}
+
+/* Cart Count */
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+
+    background: #D4AF75;
+    color: white;
+
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .nav-icons {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+}
+
+
+/* =========================
+   AURELLE HERO SECTION
+========================= */
+
+.hero {
+    min-height: 570px;
+    width: 100%;
+    padding: 55px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        120deg,
+        #FFFDF5,
+        #F5E8D6,
+        #E8DCCB
+    );
+
+    overflow: hidden;
+    gap: 40px;
+}
+
+/* LEFT CONTENT */
+
+.hero-content {
+    flex: 1;
+    max-width: 510px;
+
+    animation: slideLeft 1s ease forwards;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #B58B4F;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(45px, 5vw, 68px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: #4A3428;
+    margin-bottom: 22px;
+}
+
+.hero-content h1 span {
+    color: #C49A59;
+    font-style: italic;
+}
+
+.hero-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: #806C55;
+    max-width: 420px;
+    margin-bottom: 32px;
+}
+
+/* HERO BUTTON */
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 28px;
+
+    background: #C49A59;
+    color: white;
+
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    border: 1px solid #C49A59;
+    transition: 0.4s ease;
+}
+
+.hero-btn:hover {
+    background: transparent;
+    color: #8B6535;
+    transform: translateY(-4px);
+}
+
+.hero-btn i {
+    transition: 0.3s;
+}
+
+.hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* BOTTOM SLIDER DESIGN */
+
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 55px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: #A78A65;
+}
+
+.hero-line {
+    width: 35px;
+    height: 1px;
+    background: #D4AF75;
+}
+
+/* RIGHT IMAGE */
+
+.hero-image {
+    flex: 1;
+    max-width: 590px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: slideRight 1.2s ease forwards;
+}
+
+.necklace-img {
+    width: 100%;
+    max-width: 590px;
+    height: 420px;
+
+    object-fit: cover;
+    border-radius: 5px;
+
+    animation: floatNecklace 4s ease-in-out infinite;
+
+    filter: drop-shadow(0 20px 25px rgba(90, 60, 30, 0.12));
+}
+
+/* IMAGE LABEL */
+
+.image-label {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+
+    background: rgba(255, 253, 245, 0.9);
+    padding: 13px 20px;
+    text-align: right;
+}
+
+.image-label span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #B58B4F;
+}
+
+.image-label p {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: #4A3428;
+    margin-top: 5px;
+}
+
+/* ANIMATIONS */
+
+@keyframes floatNecklace {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        padding: 50px 6%;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-bottom {
+        justify-content: center;
+        margin-top: 35px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .necklace-img {
+        height: auto;
+        max-height: 350px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-content,
+    .hero-image,
+    .necklace-img {
+        animation: none;
+    }
+}
+
+
+/* =================================
+   AURELLE NECKLACE COLLECTION
+================================= */
+
+.necklace-section {
+    background: #f8f2e9;
+    padding: 90px 5%;
+    width: 100%;
+}
+
+/* SECTION HEADING */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.small-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #b08b55;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #4b3529;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    color: #927b66;
+    letter-spacing: 1px;
+}
+
+.heading-line {
+    width: 65px;
+    height: 2px;
+    background: #c5a16c;
+    margin: 22px auto 0;
+}
+
+/* PRODUCT GRID */
+
+.necklace-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* PRODUCT CARD */
+
+.necklace-card {
+    background: #fffdf9;
+    border: 1px solid #eee3d4;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+.necklace-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(91, 66, 43, 0.12);
+}
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #eee4d7;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.necklace-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+/* PRODUCT DETAILS */
+
+.product-info {
+    padding: 17px 12px 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600;
+    color: #493529;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color: #927e6a;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+/* PRICE */
+
+.product-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.product-price del {
+    font-size: 12px;
+    color: #a99a89;
+}
+
+.product-price span {
+    font-size: 16px;
+    font-weight: 600;
+    color: #a27a43;
+}
+
+/* BUTTONS */
+
+.product-info button {
+    width: 100%;
+    padding: 11px 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-cart {
+    background: #a9824f;
+    border: 1px solid #a9824f;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.add-cart:hover {
+    background: #80603c;
+    border-color: #80603c;
+}
+
+.buy-now {
+    background: transparent;
+    border: 1px solid #a9824f;
+    color: #80603c;
+}
+
+.buy-now:hover {
+    background: #a9824f;
+    color: white;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+    .necklace-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .necklace-section {
+        padding: 65px 4%;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .necklace-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .product-info {
+        padding: 12px 8px 15px;
+    }
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+    .product-info p {
+        font-size: 9px;
+    }
+
+    .product-price {
+        gap: 6px;
+    }
+
+    .product-price del {
+        font-size: 10px;
+    }
+
+    .product-price span {
+        font-size: 14px;
+    }
+
+    .product-info button {
+        font-size: 9px;
+        padding: 10px 3px;
+    }
+}
+
+/* =================================
+   AURELLE HAND CUFFS SECTION
+================================= */
+
+.handcuff-section {
+    padding: 70px 5%;
+    background: #f8f2e9;
+    text-align: center;
+    width: 100%;
+}
+
+/* SECTION HEADING */
+
+.handcuff-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #4A3428;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.handcuff-subheading {
+    font-family: 'Montserrat', sans-serif;
+    color: #8b725d;
+    font-size: 14px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* PRODUCT GRID */
+
+.handcuff-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 35px 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* PRODUCT CARD */
+
+.handcuff-card {
+    background: #fffdf9;
+    border: 1px solid #e8dccb;
+    overflow: hidden;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.handcuff-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(74, 52, 40, 0.12);
+}
+
+/* PRODUCT IMAGE */
+
+.handcuff-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* PRODUCT DETAILS */
+
+.handcuff-info {
+    padding: 18px 15px;
+    text-align: center;
+}
+
+.handcuff-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4A3428;
+    font-size: 17px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.handcuff-info p {
+    font-family: 'Montserrat', sans-serif;
+    color: #806c5c;
+    font-size: 12px;
+    margin: 6px 0;
+    text-align: center;
+}
+
+/* PRICE */
+
+.handcuff-price {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.handcuff-price del {
+    color: #999;
+    font-size: 13px;
+}
+
+.handcuff-price span {
+    color: #9b713b;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* BUTTONS - ONE BELOW ANOTHER */
+
+.handcuff-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.handcuff-buttons button {
+    width: 100%;
+    padding: 11px 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ADD TO CART */
+
+.handcuff-buttons .add-cart {
+    background: transparent;
+    border: 1px solid #b99561;
+    color: #4A3428;
+    margin: 0;
+}
+
+.handcuff-buttons .add-cart:hover {
+    background: #e8dccb;
+}
+
+/* BUY NOW */
+
+.handcuff-buttons .buy-now {
+    background: #4A3428;
+    border: 1px solid #4A3428;
+    color: white;
+}
+
+.handcuff-buttons .buy-now:hover {
+    background: #b99561;
+    border-color: #b99561;
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+    .handcuff-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .handcuff-section {
+        padding: 65px 4%;
+    }
+
+    .handcuff-heading {
+        font-size: 24px;
+    }
+
+    .handcuff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .handcuff-card img {
+        height: 190px;
+    }
+
+    .handcuff-info {
+        padding: 12px 9px;
+        text-align: center;
+    }
+
+    .handcuff-info h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .handcuff-info p {
+        font-size: 9px;
+        text-align: center;
+    }
+
+    .handcuff-price {
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .handcuff-price del {
+        font-size: 10px;
+    }
+
+    .handcuff-price span {
+        font-size: 14px;
+    }
+
+    .handcuff-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .handcuff-buttons button {
+        width: 100%;
+        font-size: 9px;
+        padding: 10px 3px;
+    }
+}
+/* AURELLE FIXED MOVING INFO BAR */
+
+.aurelle-info-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 42px;
+    background: #4A3428;
+    color: #FFFDF5;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    z-index: 9999;
+    border-top: 1px solid #D4AF75;
+}
+
+.info-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    white-space: nowrap;
+    animation: moveRight 30s linear infinite;
+}
+
+.info-track span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 25px;
+    color: #FFFDF5;
+}
+
+.info-track span:nth-child(even) {
+    color: #D4AF75;
+}
+
+/* RIGHT SIDE MOVEMENT */
+
+@keyframes moveRight {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* BOTTOM SPACE */
+
+body {
+    padding-bottom: 42px;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .aurelle-info-bar {
+        height: 36px;
+    }
+
+    .info-track span {
+        font-size: 10px;
+        padding: 0 15px;
+    }
+
+    body {
+        padding-bottom: 36px;
+    }
+}
+/* STORE LOCATOR SECTION */
+
+.store-locator {
+    width: 100%;
+    padding: 90px 8%;
+    background: #FFFDF8;
+    box-sizing: border-box;
+    text-align: center;
+    scroll-margin-top: 100px;
+}
+
+.store-heading span {
+    color: #B99A78;
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.store-heading h1 {
+    color: #49352B;
+    font-family: 'Cinzel', serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+    margin: 15px 0;
+}
+
+.store-heading p {
+    color: #70594A;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    max-width: 650px;
+    margin: auto;
+}
+
+.store-content {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 45px;
+    max-width: 1150px;
+    margin: 60px auto 0;
+    align-items: stretch;
+}
+
+.store-info {
+    background: #F3EBDD;
+    padding: 45px 30px;
+    text-align: center;
+    border: 1px solid #E8DCCB;
+}
+
+.store-info h2 {
+    color: #49352B;
+    font-family: 'Cinzel', serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.store-detail {
+    margin-bottom: 25px;
+}
+
+.store-detail h3 {
+    color: #B99A78;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.store-detail p {
+    color: #49352B;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.6;
+    margin: 3px 0;
+}
+
+.store-map-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 22px;
+    background: #49352B;
+    color: #F3EBDD;
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.store-map-btn:hover {
+    background: #B99A78;
+    color: #49352B;
+}
+
+.store-map {
+    min-height: 450px;
+    overflow: hidden;
+    border: 1px solid #E8DCCB;
+}
+
+.store-map iframe {
+    display: block;
+    min-height: 450px;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    .store-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+    .store-locator {
+        padding: 60px 20px;
+    }
+
+    .store-heading h1 {
+        font-size: 27px;
+    }
+
+    .store-info {
+        padding: 35px 20px;
+    }
+
+    .store-map,
+    .store-map iframe {
+        min-height: 320px;
+    }
+}
+
+/* TECHNOLOGY SECTION */
+
+.technology-section {
+    padding: 70px 5%;
+    background: #FFFDF5;
+    text-align: center;
+}
+
+.technology-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #4A3428;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.technology-subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #8b725d;
+    margin-bottom: 45px;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.technology-card {
+    background: #f8f2e9;
+    border: 1px solid #e8dccb;
+    padding: 35px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.technology-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(74, 52, 40, 0.12);
+}
+
+.technology-icon {
+    font-size: 35px;
+    color: #b99561;
+    margin-bottom: 18px;
+}
+
+.technology-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #4A3428;
+    margin-bottom: 12px;
+}
+
+.technology-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #806c5c;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .technology-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .technology-section {
+        padding: 55px 4%;
+    }
+
+    .technology-heading {
+        font-size: 25px;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .technology-card {
+        padding: 25px 12px;
+    }
+
+    .technology-card h3 {
+        font-size: 14px;
+    }
+
+    .technology-card p {
+        font-size: 10px;
+    }
+}
+
+/* SUPPORT SECTION */
+
+.support-section {
+    padding: 70px 5%;
+    background: #f8f2e9;
+    text-align: center;
+}
+
+.support-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #4A3428;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.support-subheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #8b725d;
+    margin-bottom: 45px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.support-card {
+    background: #fffdf9;
+    border: 1px solid #e8dccb;
+    padding: 35px 20px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(74, 52, 40, 0.12);
+}
+
+.support-icon {
+    font-size: 35px;
+    color: #b99561;
+    margin-bottom: 18px;
+}
+
+.support-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #4A3428;
+    margin-bottom: 12px;
+}
+
+.support-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #806c5c;
+    margin-bottom: 20px;
+}
+
+.support-card a {
+    display: inline-block;
+    text-decoration: none;
+    background: #4A3428;
+    color: white;
+    padding: 10px 22px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.support-card a:hover {
+    background: #b99561;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .support-section {
+        padding: 55px 4%;
+    }
+
+    .support-heading {
+        font-size: 25px;
+    }
+
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .support-card {
+        padding: 25px 12px;
+    }
+
+    .support-card h3 {
+        font-size: 14px;
+    }
+
+    .support-card p {
+        font-size: 10px;
+    }
+
+    .support-card a {
+        font-size: 9px;
+        padding: 9px 12px;
+    }
+}
+
+/* SMOOTH SCROLLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* AURELLE JEWELLERY FOOTER */
+
+.alberto-footer {
+    width: 100%;
+    background: #4A3428;
+    color: #FFFDF5;
+    padding: 65px 8% 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: center;
+    scroll-margin-top: 110px;
+}
+
+.footer-section h2 {
+    color: #D4AF75;
+    font-family: 'Cinzel', serif;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.footer-section p,
+.footer-section a {
+    color: #FFFDF5;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.8;
+    text-decoration: none;
+}
+
+.footer-section a {
+    display: inline-block;
+    transition: 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #D4AF75;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #D4AF75;
+    margin-top: 50px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #FFFDF5;
+}
+
+.footer-bottom span {
+    display: block;
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #D4AF75;
+}
+
+/* TABLET & MOBILE */
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .alberto-footer {
+        padding: 45px 20px 20px;
+    }
+
+    .footer-bottom {
+        margin-top: 35px;
+    }
+}
+
+/* =================================
+   AURELLE BANGLES SECTION
+================================= */
+
+.handcuff-section {
+    padding: 70px 5%;
+    background: #f8f2e9;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* SECTION HEADING */
+
+.handcuff-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #4A3428;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.handcuff-subheading {
+    font-family: 'Montserrat', sans-serif;
+    color: #8b725d;
+    font-size: 14px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* PRODUCT GRID - 5 PER ROW */
+
+.handcuff-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px 20px;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* PRODUCT CARD */
+
+.handcuff-card {
+    background: #fffdf9;
+    border: 1px solid #e8dccb;
+    overflow: hidden;
+    transition: 0.3s ease;
+    text-align: center;
+    min-width: 0;
+}
+
+.handcuff-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(74, 52, 40, 0.12);
+}
+
+/* PRODUCT IMAGE */
+
+.handcuff-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* PRODUCT DETAILS */
+
+.handcuff-info {
+    padding: 18px 15px;
+    text-align: center;
+}
+
+.handcuff-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: #4A3428;
+    font-size: 17px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.handcuff-info p {
+    font-family: 'Montserrat', sans-serif;
+    color: #806c5c;
+    font-size: 12px;
+    margin: 6px 0;
+    text-align: center;
+}
+
+/* PRICE */
+
+.handcuff-price {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.handcuff-price del {
+    color: #999;
+    font-size: 13px;
+}
+
+.handcuff-price span {
+    color: #9b713b;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* BUTTONS */
+
+.handcuff-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.handcuff-buttons button {
+    width: 100%;
+    padding: 11px 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* ADD TO CART */
+
+.handcuff-buttons .add-cart {
+    background: transparent;
+    border: 1px solid #b99561;
+    color: #4A3428;
+    margin: 0;
+}
+
+.handcuff-buttons .add-cart:hover {
+    background: #e8dccb;
+}
+
+/* BUY NOW */
+
+.handcuff-buttons .buy-now {
+    background: #4A3428;
+    border: 1px solid #4A3428;
+    color: white;
+}
+
+.handcuff-buttons .buy-now:hover {
+    background: #b99561;
+    border-color: #b99561;
+}
+
+/* TABLET - 3 PER ROW */
+
+@media (max-width: 1100px) {
+    .handcuff-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE - 2 PER ROW */
+
+@media (max-width: 650px) {
+
+    .handcuff-section {
+        padding: 65px 4%;
+    }
+
+    .handcuff-heading {
+        font-size: 24px;
+    }
+
+    .handcuff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .handcuff-card img {
+        height: 190px;
+    }
+
+    .handcuff-info {
+        padding: 12px 9px;
+    }
+
+    .handcuff-info h3 {
+        font-size: 14px;
+    }
+
+    .handcuff-info p {
+        font-size: 9px;
+    }
+
+    .handcuff-price {
+        gap: 6px;
+    }
+
+    .handcuff-price del {
+        font-size: 10px;
+    }
+
+    .handcuff-price span {
+        font-size: 14px;
+    }
+
+    .handcuff-buttons button {
+        width: 100%;
+        font-size: 9px;
+        padding: 10px 3px;
+    }
+}
