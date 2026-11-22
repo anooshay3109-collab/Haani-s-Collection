@@ -12,7 +12,7 @@
     var WHATSAPP_NUMBER = '923707706301';
 
     // Delivery charges in PKR. Use null if delivery is confirmed on WhatsApp.
-    var DELIVERY_FEE = null;
+    var DELIVERY_FEE = 300;
 
     // Maximum quantity of one product in the cart
     var MAX_QTY = 10;
