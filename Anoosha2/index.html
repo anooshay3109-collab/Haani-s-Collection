@@ -1219,8 +1219,8 @@
             <span class="checkout-small">ALMOST THERE</span>
             <h2 id="checkout-title">CHECKOUT</h2>
             <p class="checkout-intro">
-                Apni details likhein. Order hamein WhatsApp par bhej diya jayega
-                aur hum confirm kar denge.
+                Enter your details below. Your order will be sent to us on
+                WhatsApp and we will confirm it shortly.
             </p>
 
             <form id="checkout-form" novalidate>
@@ -1256,6 +1256,18 @@
 
                 <div class="checkout-summary" id="checkout-summary"></div>
 
+                <div class="payment-box">
+                    <span class="payment-title"><i class="fa-solid fa-wallet"></i> PAY VIA EASYPAISA</span>
+                    <p>
+                        Send the <strong>total amount</strong> to the Easypaisa number below,
+                        then share the payment screenshot with us on WhatsApp.
+                    </p>
+                    <div class="payment-number">
+                        <strong class="easypaisa-text" id="easypaisa-number">0370 7706301</strong>
+                        <button type="button" class="copy-btn" id="copy-number">COPY</button>
+                    </div>
+                </div>
+
                 <button type="submit" class="checkout-submit">
                     <i class="fa-brands fa-whatsapp"></i> PLACE ORDER ON WHATSAPP
                 </button>
@@ -1267,8 +1279,11 @@
             <div class="success-icon"><i class="fa-solid fa-check"></i></div>
             <h2>THANK YOU!</h2>
             <p>
-                WhatsApp khul gaya hoga. Wahan <strong>Send</strong> dabayein taake
-                hamein aapka order mil jaye. Hum jaldi confirm kar denge.
+                WhatsApp should have opened. Please press <strong>Send</strong> there
+                so that we receive your order. Then send your payment to the
+                Easypaisa number <strong class="easypaisa-text">0370 7706301</strong>
+                and share the payment screenshot in the same chat. We will confirm
+                your order shortly.
             </p>
             <a href="#" target="_blank" rel="noopener" class="checkout-submit" id="checkout-wa-link">
                 <i class="fa-brands fa-whatsapp"></i> OPEN WHATSAPP AGAIN
