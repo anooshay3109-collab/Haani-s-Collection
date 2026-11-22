@@ -2350,3 +2350,74 @@ body.cart-lock {
 .handcuff-card {
     position: relative;
 }
+
+/* Easypaisa payment box (checkout) */
+
+.payment-box {
+    margin-top: 16px;
+    padding: 16px;
+    background: #fffdf5;
+    border: 1px dashed #b99561;
+    text-align: center;
+}
+
+.payment-title {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #4A3428;
+    margin-bottom: 8px;
+}
+
+.payment-title i {
+    color: #b58b4f;
+    margin-right: 6px;
+}
+
+.payment-box p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: #806c5c;
+    margin-bottom: 12px;
+}
+
+.payment-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.payment-number strong {
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #9b713b;
+}
+
+.copy-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #b99561;
+    color: #4A3428;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: #e8dccb;
+}
+
+.copy-btn.copied {
+    background: #3f7d4f;
+    border-color: #3f7d4f;
+    color: #fff;
+}
+
+.easypaisa-text {
+    white-space: nowrap;
+}
