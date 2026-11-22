@@ -14,6 +14,9 @@
     // Delivery charges in PKR. Use null if delivery is confirmed on WhatsApp.
     var DELIVERY_FEE = 300;
 
+    // Easypaisa number customers send their payment to
+    var EASYPAISA_NUMBER = '03707706301';
+
     // Maximum quantity of one product in the cart
     var MAX_QTY = 10;
 
@@ -106,6 +109,7 @@
         el.waLink = $('#checkout-wa-link');
         el.done = $('#checkout-done');
         el.toast = $('#cart-toast');
+        el.copyBtn = $('#copy-number');
     }
 
     /* ---------- TOTALS ---------- */
@@ -411,6 +415,8 @@
         lines.push('Subtotal: ' + fmt(t.subtotal));
         lines.push('Delivery: ' + deliveryText());
         lines.push('*Total: ' + fmt(t.total) + '*');
+        lines.push('');
+        lines.push('*Payment:* Easypaisa (' + prettyNumber(EASYPAISA_NUMBER) + ') - payment screenshot to follow in this chat');
 
         var note = f.note.value.trim();
         if (note) {
@@ -442,6 +448,40 @@
         closeCheckout();
         closeCart();
         showToast('Thank you for shopping with us!');
+    }
+
+    /* ---------- EASYPAISA NUMBER ---------- */
+
+    // 03707706301 -> 0370 7706301
+    function prettyNumber(n) {
+        var d = String(n).replace(/\D/g, '');
+        return d.length === 11 ? d.slice(0, 4) + ' ' + d.slice(4) : d;
+    }
+
+    function copyText(text, done) {
+        function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy'); } catch (e) { /* ignore */ }
+            document.body.removeChild(ta);
+            done();
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, fallback);
+        } else {
+            fallback();
+        }
+    }
+
+    function showEasypaisaNumber() {
+        var shown = prettyNumber(EASYPAISA_NUMBER);
+        var nodes = document.querySelectorAll('.easypaisa-text');
+        for (var k = 0; k < nodes.length; k++) nodes[k].textContent = shown;
     }
 
     /* ---------- EVENTS ---------- */
@@ -513,6 +553,20 @@
         });
         el.done.addEventListener('click', onDone);
 
+        // Copy Easypaisa number
+        if (el.copyBtn) {
+            el.copyBtn.addEventListener('click', function () {
+                copyText(EASYPAISA_NUMBER, function () {
+                    el.copyBtn.textContent = 'COPIED ✓';
+                    el.copyBtn.classList.add('copied');
+                    setTimeout(function () {
+                        el.copyBtn.textContent = 'COPY';
+                        el.copyBtn.classList.remove('copied');
+                    }, 1500);
+                });
+            });
+        }
+
         // Escape closes the top-most panel
         document.addEventListener('keydown', function (e) {
             if (e.key !== 'Escape') return;
@@ -535,6 +589,7 @@
         grabElements();
         if (!el.drawer || !el.count || !el.toggle) return; // cart markup missing
         bindEvents();
+        showEasypaisaNumber();
         render();
     }
 
